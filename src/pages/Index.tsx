@@ -11,7 +11,7 @@ const Index = () => {
   const [password, setPassword] = useState('');
 
   const servers = [
-    { id: 'dallas', name: 'Dallas', color: 'bg-red-600', icon: '🔴' },
+    { id: 'dallas', name: 'Dallas', color: 'bg-red-600', icon: '🌆' },
     { id: 'portland', name: 'Portland', color: 'bg-green-600', icon: '🌲' },
     { id: 'phoenix', name: 'Phoenix', color: 'bg-orange-600', icon: '🔥' },
   ];
@@ -19,39 +19,45 @@ const Index = () => {
   const professions = [
     {
       title: 'Полиция Лос-Сантоса',
-      description: 'Защищай порядок на улицах города, патрулируй, расследуй преступления',
+      description: 'Защищай порядок на улицах мегаполиса, патрулируй районы на служебном автомобиле, расследуй преступления от краж до убийств. Проходи обучение в полицейской академии, получай звания от офицера до комиссара. Участвуй в высокоскоростных погонях, проводи задержания, работай в отделе детективов.',
       icon: 'Shield',
       color: 'from-blue-900/20 to-blue-600/20 hover:from-blue-900/40 hover:to-blue-600/40',
+      features: ['Патрулирование города', 'Расследования', 'Погони', 'Карьерный рост'],
     },
     {
       title: 'Шерифский департамент',
-      description: 'Охраняй округ, веди следствие, борись с преступностью в пустынях',
+      description: 'Охраняй округ Блэйн Каунти, веди следствие в самых опасных районах штата, борись с организованной преступностью в пустынях и горах. Управляй вертолётом для воздушного патрулирования, организуй спецоперации, работай с К-9 подразделением.',
       icon: 'Star',
       color: 'from-amber-900/20 to-amber-600/20 hover:from-amber-900/40 hover:to-amber-600/40',
+      features: ['Воздушное патрулирование', 'Спецоперации', 'К-9 подразделение', 'Работа в округе'],
     },
     {
       title: 'Weazel News',
-      description: 'Освещай события, веди репортажи, будь в центре самых горячих новостей',
+      description: 'Освещай самые горячие события штата, веди прямые репортажи с места происшествий, интервьюируй известных личностей города. Развивай свой медиа-бренд, получай эксклюзивные материалы, создавай телешоу. Работай в паре с оператором, используй новостной вертолёт для съёмок.',
       icon: 'Radio',
       color: 'from-purple-900/20 to-purple-600/20 hover:from-purple-900/40 hover:to-purple-600/40',
+      features: ['Прямые эфиры', 'Эксклюзивы', 'Интервью', 'Вертолёт для съёмок'],
     },
     {
       title: 'Emergency Medical Service',
-      description: 'Спасай жизни, оказывай помощь, работай в команде врачей и парамедиков',
+      description: 'Спасай жизни граждан, оказывай экстренную медицинскую помощь на месте ДТП и происшествий, работай в команде парамедиков и врачей. Проводи операции в госпитале, управляй санитарным вертолётом, участвуй в масштабных спасательных операциях. Развивай навыки от фельдшера до главврача.',
       icon: 'Heart',
       color: 'from-red-900/20 to-red-600/20 hover:from-red-900/40 hover:to-red-600/40',
+      features: ['Экстренная помощь', 'Операции', 'Мед. вертолёт', 'Спасательные операции'],
     },
     {
       title: 'Нелегальная работа',
-      description: 'Рискуй всем, зарабатывай большие деньги, живи на грани закона',
+      description: 'Рискуй всем ради больших денег, живи на грани закона в криминальном мире. Организуй ограбления банков, торгуй контрабандой, создавай свою банду или вступай в мафиозные семьи. Участвуй в разборках за территории, отмывай деньги через легальный бизнес, уходи от полиции.',
       icon: 'Skull',
       color: 'from-gray-900/20 to-gray-600/20 hover:from-gray-900/40 hover:to-gray-600/40',
+      features: ['Ограбления', 'Банды', 'Контрабанда', 'Территории'],
     },
     {
       title: 'Судебная система',
-      description: 'Верши правосудие, выноси приговоры, будь судьёй или адвокатом',
+      description: 'Верши правосудие как судья или защищай клиентов как адвокат. Рассматривай дела в суде, выноси приговоры, определяй судьбы преступников. Как адвокат — строй защиту, изучай улики, веди переговоры с прокурором. Участвуй в громких процессах, получай репутацию лучшего юриста штата.',
       icon: 'Scale',
       color: 'from-indigo-900/20 to-indigo-600/20 hover:from-indigo-900/40 hover:to-indigo-600/40',
+      features: ['Судебные процессы', 'Защита клиентов', 'Приговоры', 'Репутация'],
     },
   ];
 
@@ -101,19 +107,19 @@ const Index = () => {
           </div>
           
           <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 animate-slide-up">
-            <div className="bg-gradient-to-br from-red-950/40 to-black border border-red-800/50 p-8 backdrop-blur-sm hover:border-red-600 transition-all duration-500 hover:scale-105">
-              <Icon name="Users" size={48} className="mx-auto mb-4 text-red-500" />
-              <h3 className="text-2xl font-bold mb-2">1000+ ИГРОКОВ</h3>
+            <div className="bg-gradient-to-br from-red-950/40 to-black border border-red-800/50 p-8 backdrop-blur-sm hover:border-red-600 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-900/50 hover:-translate-y-2 group">
+              <Icon name="Users" size={48} className="mx-auto mb-4 text-red-500 group-hover:text-red-400 group-hover:scale-110 transition-all duration-300" />
+              <h3 className="text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors duration-300">1000+ ИГРОКОВ</h3>
               <p className="text-gray-400">Активное комьюнити онлайн 24/7</p>
             </div>
-            <div className="bg-gradient-to-br from-red-950/40 to-black border border-red-800/50 p-8 backdrop-blur-sm hover:border-red-600 transition-all duration-500 hover:scale-105">
-              <Icon name="Zap" size={48} className="mx-auto mb-4 text-red-500" />
-              <h3 className="text-2xl font-bold mb-2">СТАБИЛЬНЫЙ СЕРВЕР</h3>
+            <div className="bg-gradient-to-br from-red-950/40 to-black border border-red-800/50 p-8 backdrop-blur-sm hover:border-red-600 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-900/50 hover:-translate-y-2 group">
+              <Icon name="Zap" size={48} className="mx-auto mb-4 text-red-500 group-hover:text-red-400 group-hover:scale-110 transition-all duration-300" />
+              <h3 className="text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors duration-300">СТАБИЛЬНЫЙ СЕРВЕР</h3>
               <p className="text-gray-400">Без лагов и вайпов</p>
             </div>
-            <div className="bg-gradient-to-br from-red-950/40 to-black border border-red-800/50 p-8 backdrop-blur-sm hover:border-red-600 transition-all duration-500 hover:scale-105">
-              <Icon name="Trophy" size={48} className="mx-auto mb-4 text-red-500" />
-              <h3 className="text-2xl font-bold mb-2">УНИКАЛЬНЫЕ СОБЫТИЯ</h3>
+            <div className="bg-gradient-to-br from-red-950/40 to-black border border-red-800/50 p-8 backdrop-blur-sm hover:border-red-600 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-900/50 hover:-translate-y-2 group">
+              <Icon name="Trophy" size={48} className="mx-auto mb-4 text-red-500 group-hover:text-red-400 group-hover:scale-110 transition-all duration-300" />
+              <h3 className="text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors duration-300">УНИКАЛЬНЫЕ СОБЫТИЯ</h3>
               <p className="text-gray-400">Конкурсы, турниры, награды</p>
             </div>
           </div>
@@ -131,16 +137,29 @@ const Index = () => {
             {professions.map((profession, index) => (
               <div
                 key={index}
-                className={`bg-gradient-to-br ${profession.color} border border-red-900/30 p-8 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-red-600 animate-scale-in cursor-pointer group`}
+                className={`bg-gradient-to-br ${profession.color} border border-red-900/30 p-8 backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-red-600 hover:shadow-2xl hover:shadow-red-900/50 animate-scale-in cursor-pointer group relative overflow-hidden`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-full blur-3xl group-hover:bg-red-600/20 transition-all duration-500 -translate-y-16 translate-x-16" />
+                
                 <Icon 
                   name={profession.icon} 
                   size={56} 
-                  className="mb-6 text-red-500 group-hover:text-red-400 transition-colors duration-300" 
+                  className="mb-6 text-red-500 group-hover:text-red-400 group-hover:scale-110 transition-all duration-300" 
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">{profession.title}</h3>
-                <p className="text-gray-300">{profession.description}</p>
+                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-red-400 transition-colors duration-300">{profession.title}</h3>
+                <p className="text-gray-300 leading-relaxed mb-6">{profession.description}</p>
+                
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {profession.features.map((feature, idx) => (
+                    <span 
+                      key={idx}
+                      className="text-xs px-3 py-1 bg-red-950/40 border border-red-800/50 text-red-300 group-hover:bg-red-900/40 group-hover:border-red-600/50 transition-all duration-300"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -196,9 +215,9 @@ const Index = () => {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
                 {servers.map((server) => (
-                  <div key={server.id} className="text-center p-6 bg-black/40 border border-red-900/30 hover:border-red-600 transition-all duration-300">
-                    <div className="text-5xl mb-3">{server.icon}</div>
-                    <h4 className="text-xl font-bold">{server.name}</h4>
+                  <div key={server.id} className="text-center p-6 bg-black/40 border border-red-900/30 hover:border-red-600 hover:scale-105 hover:shadow-xl hover:shadow-red-900/40 transition-all duration-300 group">
+                    <div className="text-5xl mb-3 group-hover:scale-110 transition-transform duration-300">{server.icon}</div>
+                    <h4 className="text-xl font-bold group-hover:text-red-400 transition-colors duration-300">{server.name}</h4>
                   </div>
                 ))}
               </div>
