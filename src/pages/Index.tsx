@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Icon from '@/components/ui/icon';
@@ -223,75 +222,86 @@ const Index = () => {
         </div>
       </footer>
 
-      <Dialog open={isRegisterOpen} onOpenChange={setIsRegisterOpen}>
-        <DialogContent className="bg-[#0A0A0A] border-2 border-red-600 text-white max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-bold text-center text-red-600">
-              РЕГИСТРАЦИЯ
-            </DialogTitle>
-            <DialogDescription className="text-gray-400 text-center">
-              Заполни данные и выбери сервер для начала игры
-            </DialogDescription>
-          </DialogHeader>
-          
-          <div className="space-y-6 mt-4">
-            <div>
-              <Label htmlFor="nickname" className="text-gray-300 mb-2 block">
-                Никнейм (Имя_Фамилия)
-              </Label>
-              <Input
-                id="nickname"
-                placeholder="Ivan_Petrov"
-                value={nickname}
-                onChange={(e) => setNickname(e.target.value)}
-                className="bg-black/60 border-red-900/50 text-white focus:border-red-600"
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="password" className="text-gray-300 mb-2 block">
-                Пароль
-              </Label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="bg-black/60 border-red-900/50 text-white focus:border-red-600"
-              />
-            </div>
-            
-            <div>
-              <Label className="text-gray-300 mb-3 block">Выбери сервер</Label>
-              <div className="grid grid-cols-3 gap-3">
-                {servers.map((server) => (
-                  <button
-                    key={server.id}
-                    onClick={() => setSelectedServer(server.id)}
-                    className={`p-4 border-2 transition-all duration-300 ${
-                      selectedServer === server.id
-                        ? 'border-red-600 bg-red-950/30 scale-105'
-                        : 'border-red-900/30 bg-black/40 hover:border-red-700'
-                    }`}
-                  >
-                    <div className="text-3xl mb-2">{server.icon}</div>
-                    <div className="text-sm font-bold">{server.name}</div>
-                  </button>
-                ))}
-              </div>
-            </div>
-            
-            <Button
-              onClick={handleRegister}
-              disabled={!nickname || !password || !selectedServer}
-              className="w-full bg-red-600 hover:bg-red-700 text-white py-6 text-lg font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+{isRegisterOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center">
+          <div 
+            className="absolute inset-0 bg-black/90 backdrop-blur-sm"
+            onClick={() => setIsRegisterOpen(false)}
+          />
+          <div className="relative bg-[#0A0A0A] border-2 border-red-600 text-white max-w-md w-full mx-4 p-8 animate-scale-in">
+            <button
+              onClick={() => setIsRegisterOpen(false)}
+              className="absolute right-4 top-4 text-gray-400 hover:text-white transition-colors"
             >
-              НАЧАТЬ ИГРУ
-            </Button>
+              <Icon name="X" size={24} />
+            </button>
+            
+            <h2 className="text-3xl font-bold text-center text-red-600 mb-2">
+              РЕГИСТРАЦИЯ
+            </h2>
+            <p className="text-gray-400 text-center mb-6">
+              Заполни данные и выбери сервер для начала игры
+            </p>
+            
+            <div className="space-y-6">
+              <div>
+                <Label htmlFor="nickname" className="text-gray-300 mb-2 block">
+                  Никнейм (Имя_Фамилия)
+                </Label>
+                <Input
+                  id="nickname"
+                  placeholder="Ivan_Petrov"
+                  value={nickname}
+                  onChange={(e) => setNickname(e.target.value)}
+                  className="bg-black/60 border-red-900/50 text-white focus:border-red-600"
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="password" className="text-gray-300 mb-2 block">
+                  Пароль
+                </Label>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="bg-black/60 border-red-900/50 text-white focus:border-red-600"
+                />
+              </div>
+              
+              <div>
+                <Label className="text-gray-300 mb-3 block">Выбери сервер</Label>
+                <div className="grid grid-cols-3 gap-3">
+                  {servers.map((server) => (
+                    <button
+                      key={server.id}
+                      onClick={() => setSelectedServer(server.id)}
+                      className={`p-4 border-2 transition-all duration-300 ${
+                        selectedServer === server.id
+                          ? 'border-red-600 bg-red-950/30 scale-105'
+                          : 'border-red-900/30 bg-black/40 hover:border-red-700'
+                      }`}
+                    >
+                      <div className="text-3xl mb-2">{server.icon}</div>
+                      <div className="text-sm font-bold">{server.name}</div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
+              <Button
+                onClick={handleRegister}
+                disabled={!nickname || !password || !selectedServer}
+                className="w-full bg-red-600 hover:bg-red-700 text-white py-6 text-lg font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                НАЧАТЬ ИГРУ
+              </Button>
+            </div>
           </div>
-        </DialogContent>
-      </Dialog>
+        </div>
+      )}
     </div>
   );
 };
