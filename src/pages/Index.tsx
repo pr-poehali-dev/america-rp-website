@@ -59,6 +59,20 @@ const Index = () => {
       color: 'from-indigo-900/20 to-indigo-600/20 hover:from-indigo-900/40 hover:to-indigo-600/40',
       features: ['Судебные процессы', 'Защита клиентов', 'Приговоры', 'Репутация'],
     },
+    {
+      title: 'Government (Правительство)',
+      description: 'Управляй штатом и принимай судьбоносные решения. Стань министром и руководи ключевыми отраслями экономики, или займи пост губернатора и правь всем государством. Присоединяйся к USSS (United States Secret Service) — элитной охране первых лиц штата, обеспечивай безопасность губернатора и высших чиновников. Участвуй в политических кампаниях, формируй бюджет, издавай законы.',
+      icon: 'Building2',
+      color: 'from-emerald-900/20 to-emerald-600/20 hover:from-emerald-900/40 hover:to-emerald-600/40',
+      features: ['Министр/Губернатор', 'USSS охрана', 'Принятие законов', 'Управление штатом'],
+    },
+    {
+      title: 'FIB (Federal Investigation Bureau)',
+      description: 'Элитная федеральная служба по борьбе с преступностью высшего уровня. Расследуй серийные убийства, веди слежку за преступными организациями, разоблачай коррупцию в высших эшелонах власти. Проводи крупномасштабные контртеррористические операции, освобождай заложников, выслеживай и задерживай самых опасных преступников. Работай под прикрытием, собирай улики, координируй рейды спецназа. Получи доступ к самым секретным делам штата.',
+      icon: 'ShieldCheck',
+      color: 'from-slate-900/20 to-slate-600/20 hover:from-slate-900/40 hover:to-slate-600/40',
+      features: ['Федеральные дела', 'Борьба с коррупцией', 'Контртерроризм', 'Спецоперации'],
+    },
   ];
 
   const handleRegister = () => {
@@ -79,7 +93,6 @@ const Index = () => {
           <div className="flex gap-8 items-center">
             <a href="#home" className="text-sm hover:text-red-600 transition-colors duration-300 tracking-wide uppercase">Главная</a>
             <a href="#professions" className="text-sm hover:text-red-600 transition-colors duration-300 tracking-wide uppercase">Профессии</a>
-            <a href="#cyberpunk" className="text-sm hover:text-red-600 transition-colors duration-300 tracking-wide uppercase">Киберпанк</a>
             <a href="#about" className="text-sm hover:text-red-600 transition-colors duration-300 tracking-wide uppercase">О сервере</a>
             <a href="https://t.me/+o0s2S3TSH0pmODAy" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-red-600 transition-colors duration-300 tracking-wide uppercase">Форум</a>
           </div>
@@ -87,7 +100,7 @@ const Index = () => {
       </nav>
 
       <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
-        <div className="absolute inset-0 bg-[url('https://cdn.poehali.dev/projects/59b3e206-f66f-43bc-b078-bf6c53e409e1/bucket/9dcdb4e3-cacc-41c1-bcca-98196a4ea879.jpg')] bg-cover bg-center opacity-20 blur-xl" />
+        <div className="absolute inset-0 bg-[url('https://cdn.poehali.dev/projects/59b3e206-f66f-43bc-b078-bf6c53e409e1/bucket/9dcdb4e3-cacc-41c1-bcca-98196a4ea879.jpg')] bg-cover bg-center opacity-30 blur-sm" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyMjAsMzgsMzgsMC4xKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30" />
         
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -165,80 +178,6 @@ const Index = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="cyberpunk" className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-950/20 via-purple-950/20 to-pink-950/20" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDAsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-block mb-4 px-6 py-2 bg-gradient-to-r from-cyan-500/20 to-pink-500/20 border border-cyan-500/50 backdrop-blur-sm">
-              <span className="text-cyan-400 font-bold tracking-widest text-sm">⚡ СПЕЦИАЛЬНОЕ СОБЫТИЕ ⚡</span>
-            </div>
-            <h2 className="text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 drop-shadow-[0_0_30px_rgba(0,255,255,0.5)]">
-              CYBERPUNK 2077
-            </h2>
-            <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-300 mb-6 leading-relaxed">
-                Добро пожаловать в будущее! На время киберпанк-ивента правила меняются — город окутывает неоновый туман, 
-                а улицы заполняют модифицированные люди с киберимплантами.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <div className="bg-gradient-to-br from-cyan-950/40 to-purple-950/40 border-2 border-cyan-500/30 p-8 backdrop-blur-md hover:border-cyan-400 transition-all duration-500 group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-cyan-500/20 rounded-full blur-3xl group-hover:bg-cyan-400/30 transition-all duration-500" />
-              
-              <Icon name="Cpu" size={48} className="mb-4 text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="text-3xl font-bold mb-4 text-cyan-300">Разрешённый контент</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start gap-3">
-                  <Icon name="Check" size={20} className="text-cyan-400 mt-1 flex-shrink-0" />
-                  <span><strong className="text-cyan-400">Киберпанк скины</strong> — неоновые костюмы, импланты, футуристическая броня</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Icon name="Check" size={20} className="text-cyan-400 mt-1 flex-shrink-0" />
-                  <span><strong className="text-cyan-400">Модификации тела</strong> — светящиеся татуировки, киберглаза, робо-руки</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Icon name="Check" size={20} className="text-cyan-400 mt-1 flex-shrink-0" />
-                  <span><strong className="text-cyan-400">Футуристический транспорт</strong> — неоновые машины, ховербайки</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-950/40 to-pink-950/40 border-2 border-purple-500/30 p-8 backdrop-blur-md hover:border-purple-400 transition-all duration-500 group relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl group-hover:bg-purple-400/30 transition-all duration-500" />
-              
-              <Icon name="Zap" size={48} className="mb-4 text-purple-400 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="text-3xl font-bold mb-4 text-purple-300">Особенности ивента</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-start gap-3">
-                  <Icon name="Star" size={20} className="text-purple-400 mt-1 flex-shrink-0" />
-                  <span><strong className="text-purple-400">Киберпреступность</strong> — хакеры, нетраннеры, корпоративные войны</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Icon name="Star" size={20} className="text-purple-400 mt-1 flex-shrink-0" />
-                  <span><strong className="text-purple-400">Специальные награды</strong> — уникальные предметы только для участников</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Icon name="Star" size={20} className="text-purple-400 mt-1 flex-shrink-0" />
-                  <span><strong className="text-purple-400">Новые локации</strong> — неоновые клубы, корпоративные башни</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center animate-pulse-glow">
-            <div className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 border-2 border-cyan-400 shadow-[0_0_30px_rgba(0,255,255,0.5)]">
-              <p className="text-white font-bold text-lg tracking-wide">
-                🎮 Ивент активен до конца месяца — присоединяйся к киберпанк-революции!
-              </p>
-            </div>
           </div>
         </div>
       </section>
