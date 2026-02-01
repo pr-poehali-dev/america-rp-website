@@ -125,8 +125,8 @@ const Index = () => {
           <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 animate-slide-up">
             <div className="bg-gradient-to-br from-red-950/40 to-black border border-red-800/50 p-8 backdrop-blur-sm hover:border-red-600 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-900/50 hover:-translate-y-2 group">
               <Icon name="Users" size={48} className="mx-auto mb-4 text-red-500 group-hover:text-red-400 group-hover:scale-110 transition-all duration-300" />
-              <h3 className="text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors duration-300">1000+ ИГРОКОВ</h3>
-              <p className="text-gray-400">Активное комьюнити онлайн 24/7</p>
+              <h3 className="text-2xl font-bold mb-2 group-hover:text-red-400 transition-colors duration-300">АКТИВНОЕ КОМЬЮНИТИ</h3>
+              <p className="text-gray-400">Дружное сообщество игроков</p>
             </div>
             <div className="bg-gradient-to-br from-red-950/40 to-black border border-red-800/50 p-8 backdrop-blur-sm hover:border-red-600 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-red-900/50 hover:-translate-y-2 group">
               <Icon name="Zap" size={48} className="mx-auto mb-4 text-red-500 group-hover:text-red-400 group-hover:scale-110 transition-all duration-300" />
