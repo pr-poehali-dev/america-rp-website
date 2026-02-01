@@ -13,7 +13,8 @@ const Index = () => {
   const servers = [
     { id: 'dallas', name: 'Dallas', color: 'bg-red-600', icon: '🌆', online: 8, max: 10 },
     { id: 'portland', name: 'Portland', color: 'bg-green-600', icon: '🌲', online: 7, max: 10 },
-    { id: 'phoenix', name: 'Phoenix', color: 'bg-orange-600', icon: '🔥', online: 0, max: 10 },
+    { id: 'phoenix', name: 'Phoenix', color: 'bg-orange-600', icon: '🔥', online: 4, max: 10 },
+    { id: 'newyork', name: 'New York', color: 'bg-blue-600', icon: '🗽', online: 0, max: 10 },
   ];
 
   const professions = [
